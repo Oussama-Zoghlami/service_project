@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un Département</title>
+    <!-- Intégration de Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Supprimer un Département</h2>
+
+    <p>Voulez-vous vraiment supprimer le département <strong th:text="${department.name}"></strong> ?</p>
+
+    <form th:action="@{/departments/delete/{id}}" th:method="post" th:object="${department}">
+        <input type="hidden" th:field="*{id}"/>
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
+
+    <a th:href="@{/departments/list}" class="btn btn-secondary mt-3">Retour à la Liste des Départements</a>
+</div>
+
+
+
+</body>
+</html>

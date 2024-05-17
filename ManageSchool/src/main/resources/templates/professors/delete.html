@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un Professeur</title>
+    <!-- Intégration de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Text color */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 255, 0.4); /* Semi-transparent light blue background color for container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red button background color */
+            border-color: #dc3545; /* Red button border color */
+            color: #fff; /* Button text color */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Red button background color on hover */
+            border-color: #bd2130; /* Red button border color on hover */
+        }
+
+        .btn-secondary {
+            background-color: #6c757d; /* Gray button background color */
+            border-color: #6c757d; /* Gray button border color */
+            color: #fff; /* Button text color */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Gray button background color on hover */
+            border-color: #545b62; /* Gray button border color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Supprimer un Professeur</h2>
+
+    <p>Êtes-vous sûr de vouloir supprimer ce professeur ?</p>
+
+    <form th:action="@{/professors/delete}" method="post" th:object="${professor}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+        <a th:href="@{/professors/list}" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+
+</body>
+</html>

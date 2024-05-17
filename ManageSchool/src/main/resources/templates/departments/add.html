@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Département</title>
+    <!-- Intégration de Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff; /* White text color */
+        }
+        .container {
+            padding: 50px;
+        }
+        .card {
+            background-color: rgba(34, 34, 34, 0.8); /* Dark semi-transparent background for cards */
+            color: #ffffff; /* White text color in cards */
+        }
+        .card-title {
+            color: #17a2b8; /* Aqua card title color */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Blue primary button color */
+            border-color: #007bff; /* Blue border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Ajouter un Département</h2>
+
+    <form th:action="@{/departments/add}" method="post">
+        <div class="form-group">
+            <label for="name">Nom du Département</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+
+    <a th:href="@{/departments/list}" class="btn btn-secondary mt-3">Retour à la Liste des Départements</a>
+</div>
+
+<!-- Intégration de Bootstrap JS et Popper.js pour les fonctionnalités Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

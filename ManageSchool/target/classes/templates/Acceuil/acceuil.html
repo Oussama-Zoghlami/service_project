@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Ecole</title>
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff; /* White text color */
+        }
+        .container {
+            padding: 50px;
+        }
+        .card {
+            background-color: rgba(34, 34, 34, 0.8); /* Dark semi-transparent background for cards */
+            color: #ffffff; /* White text color in cards */
+        }
+        .card-title {
+            color: #17a2b8; /* Aqua card title color */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Blue primary button color */
+            border-color: #007bff; /* Blue border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Bienvenue sur la plateforme de Gestion de l'École</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gérer les Étudiants</h5>
+                    <p class="card-text">Ajouter, modifier ou supprimer des étudiants.</p>
+                    <a href="/students/list" class="btn btn-primary">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gérer les Professeurs</h5>
+                    <p class="card-text">Ajouter, modifier ou supprimer des professeurs.</p>
+                    <a href="/professors/list" class="btn btn-primary">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gérer les Départements</h5>
+                    <p class="card-text">Ajouter, modifier ou supprimer des départements.</p>
+                    <a href="/departments/list" class="btn btn-primary">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

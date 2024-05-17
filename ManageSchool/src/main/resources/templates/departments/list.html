@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Départements</title>
+    <!-- Intégration de Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff; /* White text color */
+        }
+        .container {
+            padding: 20px;
+        }
+        .btn-primary {
+            background-color: #007bff; /* Blue primary button color */
+            border-color: #007bff; /* Blue border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Red danger button color */
+            border-color: #dc3545; /* Red border color */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            border-color: #c82333;
+        }
+        .table-dark th {
+            background-color: #343a40; /* Dark table header background */
+            color: #ffffff; /* White table header text color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Liste des Départements</h2>
+
+    <a th:href="@{/departments/add}" class="btn btn-primary mb-3">Ajouter un Département</a>
+    <a th:href="@{/}" class="btn btn-primary mb-3">Retour à l'Accueil</a>
+
+    <table class="table table-bordered ">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nom du Département</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.name}"></td>
+            <td>
+                <a th:href="@{/departments/delete/{id}(id=${department.id})}" class="btn btn-danger btn-sm">Supprimer</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Intégration de Bootstrap JS et Popper.js pour les fonctionnalités Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

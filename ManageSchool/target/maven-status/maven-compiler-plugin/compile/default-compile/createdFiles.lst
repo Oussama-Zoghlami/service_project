@@ -1,0 +1,14 @@
+com\example\demo\Student.class
+com\example\demo\ProfessorRepository.class
+com\example\demo\DepartmentController.class
+com\example\demo\DepartmentService.class
+com\example\demo\Department.class
+com\example\demo\StudentRepository.class
+com\example\demo\Professor.class
+com\example\demo\StudentService.class
+com\example\demo\StudentController.class
+com\example\demo\AcceuilController.class
+com\example\demo\ProfessorController.class
+com\example\demo\DepartmentRepository.class
+com\example\demo\GestionEcoleApplication.class
+com\example\demo\ProfessorService.class

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Professeurs</title>
+    <!-- Intégration de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Text color */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 255, 0.4); /* Semi-transparent light blue background color for container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+        }
+
+        .table th,
+        .table td {
+            color: #fff; /* Table text color */
+        }
+
+        .table-dark th {
+            background-color: #007bff; /* Light blue table header background color */
+        }
+
+        .table-bordered {
+            border-color: #fff; /* White border color */
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            border-color: #fff; /* White border color */
+        }
+
+        .btn-warning,
+        .btn-danger,
+        .btn-success,
+        .btn-primary {
+            color: #fff; /* Button text color */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        .btn-warning:hover,
+        .btn-danger:hover,
+        .btn-success:hover,
+        .btn-primary:hover {
+            opacity: 0.8; /* Reduce opacity on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Liste des Professeurs</h2>
+
+    <table class="table table-bordered ">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Département</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="professor : ${professors}">
+            <td th:text="${professor.id}"></td>
+            <td th:text="${professor.firstName}"></td>
+            <td th:text="${professor.lastName}"></td>
+            <td th:text="${professor.email}"></td>
+            <td th:text="${professor.phoneNumber}"></td>
+            <td th:text="${professor.department}"></td>
+            <td>
+                <a th:href="@{'/professors/edit/' + ${professor.id}}" class="btn btn-warning btn-sm">Éditer</a>
+                <a th:href="@{'/professors/delete/' + ${professor.id}}" class="btn btn-danger btn-sm">Supprimer</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/professors/add}" class="btn btn-success">Ajouter un Professeur</a>
+    <a th:href="@{/}" class="btn btn-primary mb-3" style="margin-top:12px;">Retour à l'Accueil</a>
+</div>
+
+</body>
+</html>
